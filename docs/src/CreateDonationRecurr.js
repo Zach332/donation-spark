@@ -39,7 +39,8 @@ export default function CreateDonationRecurr() {
         thankYou = (
             <img
                 src={ThankYou}
-                className="ms-1"
+                style={{width:"30%"}}
+                className="mx-auto d-block"
             />
         )
     }
@@ -66,7 +67,10 @@ export default function CreateDonationRecurr() {
                 </select>
             </div>
             <div class="col-auto">
-                <button type="submit" onClick={handleSubmit} className="btn btn-primary mb-3">Follow Donation Event</button>
+                <button type="submit" onClick={handleSubmit} disabled={status==="submitted"} className="btn btn-primary mb-3">Follow Donation Event</button>
+            </div>
+            <div className="mx-auto d-block">
+                {thankYou}
             </div>
         </div>
     )
