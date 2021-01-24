@@ -17,6 +17,11 @@ export default function DonationTrigger() {
         });
     }, []);
 
+    const follow = (event) => {
+        window.location.href = "/#/follow-donation-event/" + donationTrigger.id
+        event.preventDefault();
+    }
+
     if(status === "loading") {
         return <Spinner />
     }
@@ -47,8 +52,8 @@ export default function DonationTrigger() {
                 <p class="card-text">{donationTrigger.description}</p>
                 {additionalFields}
                 <div className="d-flex align-items-center mb-2">
-                    <button class="btn btn-outline-info me-auto">
-                        <Link to={"/follow-donation-event/"+ donationTrigger.id} className="text-decoration-none">Follow</Link>
+                    <button onClick={follow} class="btn btn-primary me-auto">
+                        Follow
                     </button>
                 </div>
                 {donationEvent}
