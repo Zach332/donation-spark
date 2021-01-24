@@ -38,7 +38,6 @@ export default function AddDonationEvent() {
 
     return (
         <form>
-            <h1>Add new donation event</h1>
             <label className="form-label">Type of event</label>
             <select className="form-select mb-5" aria-label="Default select example" onChange={options} value={eventType}>
                 <option value="tweet">Tweet</option>
