@@ -17,7 +17,7 @@ public class InMemoryDatabase {
     public InMemoryDatabase() {
         this.triggers = new ArrayList<>();
 
-        Trigger stockMarketTrigger = new StockPriceChangeTrigger("Stock Market", "Whenever the broader stock market goes up by 2% in one day.", "https://blog.galvanize.com/wp-content/uploads/2020/01/Can-data-science-predict-the-stock-market-.jpg", "VOO", 2.0);
+        Trigger stockMarketTrigger = new StockPriceChangeTrigger("Stock Market", "Whenever the S&P 500 goes up 2% in one day.", "https://blog.galvanize.com/wp-content/uploads/2020/01/Can-data-science-predict-the-stock-market-.jpg", "VOO", 2.0);
         stockMarketTrigger.stars = 3209;
         triggers.add(stockMarketTrigger);
 
@@ -28,6 +28,14 @@ public class InMemoryDatabase {
         Trigger elonMuskTrigger = new KeywordTrigger("Elon Musk", "Whenever Elon Musk tweets about Mars.", "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg", "@elonmusk", "Mars");
         elonMuskTrigger.stars = 4278;
         triggers.add(elonMuskTrigger);
+
+        Trigger aaplTrigger = new StockPriceChangeTrigger("Apple Stock", "Whenever Apple stock goes up 1% in one day.", "https://i.insider.com/5cf672a311e205334626ab19?width=750&format=jpeg&auto=webp", "AAPL", 1.0);
+        aaplTrigger.stars = 9875;
+        triggers.add(aaplTrigger);
+
+        Trigger gasTrigger = new Trigger("Gasoline", "Whenever you fill up your car with gas.", "https://cdn.abcotvs.com/dip/images/4471641_101218-kgo-gas-station-img_Image_17-33-24,22.jpg?w=1600");
+        gasTrigger.stars = 4021;
+        triggers.add(gasTrigger);
     }
 
     public List<Trigger> getTriggers() {
