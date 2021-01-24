@@ -3,6 +3,7 @@ import Home from './Home';
 import About from './About';
 import Navbar from './Navbar';
 import AddDonationEvent from './AddDonationEvent';
+import CreateDonationRecurr from './CreateDonationRecurr';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                     <Switch>
                         <Route path="/home" exact component={Home} />
                         <Route path="/new-donation-event" exact component={AddDonationEvent} />
+                        <Route path="/follow-donation-event" exact component={CreateDonationRecurr} />
                         <Route component={About} />
                     </Switch>
                 </div>
