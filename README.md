@@ -8,7 +8,7 @@ We built Donation Spark to provide an easy way to donate to valuable, important 
 
 ## What it does
 
-The [Donation Spark homepage](http://donation-spark.tech/#/home) provides a list of different triggers, called sparks, for different possible events. sparks are broad in scope, ranging from Elon musk tweeting about Mars to having a good day in the stock market. 
+The [Donation Spark homepage](http://donation-spark.tech/#/home) provides a list of different triggers, called sparks, for different possible events. Sparks are broad in scope, ranging from Elon musk tweeting about Mars to having a good day in the stock market. 
 
 Users can also create the own sparks. For example, users can add a spark that activates when a stock goes up by a specified percentage in one day.
 
