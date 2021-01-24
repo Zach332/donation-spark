@@ -18,7 +18,7 @@ At the moment, Donation Spark is just a proof of concept, but we have a vision f
 
 When users subscribe to sparks, they should be notified via email about the spark and prompted to donate to the cause they selected. Even further in the future, Donation Spark could directly link to a user's bank account to make donating even easier.
 
-Additionally, we want to integrate with the Twitter API so we can show more information to the user before the subscribe to a spark.
+Additionally, we want to integrate with the Twitter API so we can show more information to the user before they subscribe to a spark.
 
 At the moment, Donation Spark is using a temporary in-memory data structure to store sparks, but in the future, that should be replaced by a fully-fledged database.
 
