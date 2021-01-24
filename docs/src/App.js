@@ -4,6 +4,7 @@ import About from './About';
 import Navbar from './Navbar';
 import AddDonationEvent from './AddDonationEvent';
 import CreateDonationRecurr from './CreateDonationRecurr';
+import DonationTriggerPage from './DonationTriggerPage'
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <div className="container mx-auto">
                     <Switch>
                         <Route path="/home" exact component={Home} />
+                        <Route path="/event/:id" exact component={DonationTriggerPage} />
                         <Route path="/new-donation-event" exact component={AddDonationEvent} />
                         <Route path="/follow-donation-event" exact component={CreateDonationRecurr} />
                         <Route component={About} />

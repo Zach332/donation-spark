@@ -1,33 +1,53 @@
 import React from 'react'
 import axios from 'axios'
+import CheckMark from "./check.svg";
 
 export default function AddDonationEvent() {
 
     const [eventType, setEventType] = React.useState("tweet");
+    const [trigger, setTrigger] = React.useState({})
+    const [status, setStatus] = React.useState("notSubmitted")
 
     const options = (event) => {setEventType(event.target.value)};
 
     let selectedForm;
 
     const handleSubmit = (event) => {
-        axios
-            .post("/api/triggers", {
-            })
-            .then(() => {
-            })
+        if(eventType === "tweet") {
+            axios
+                .post("https://donation-spark.ue.r.appspot.com/api/tweets", trigger)
+                .then(() => {
+                    setStatus("success")
+                })
+        } else {
+            axios
+                .post("https://donation-spark.ue.r.appspot.com/api/stocks", trigger)
+                .then(() => {
+                    setStatus("success")
+                })
+        }
         event.preventDefault();
     }
+
+    const handleInputChange = (event) => {
+        const target = event.target;
+        const name = target.id;
+        setTrigger((trigger) => ({
+            ...trigger,
+            [name]: target.value,
+        }));
+    };
 
     if (eventType == "tweet") {
         selectedForm = (
             <div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Twitter Username</label>
-                    <input class="form-control" type="text" placeholder="Enter Twitter Username Here" aria-label="default input example"></input>
+                    <input class="form-control" id="username" type="text" placeholder="Enter Twitter Username Here" aria-label="default input example"></input>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Keyword</label>
-                    <input class="form-control" type="text" placeholder="Enter Keyword Here" aria-label="default input example"></input>
+                    <input class="form-control" id="keywordRequired" type="text" placeholder="Enter Keyword Here" aria-label="default input example"></input>
                 </div>
             </div>
         );
@@ -36,14 +56,26 @@ export default function AddDonationEvent() {
             <div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Stock Ticker</label>
-                    <input class="form-control" type="text" placeholder="Enter Stock Ticker Here" aria-label="default input example"></input>
+                    <input class="form-control" id="ticker" type="text" placeholder="Enter Stock Ticker Here" aria-label="default input example"></input>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Stock Increase Percent</label>
-                    <input class="form-control" type="number" min="1" step="any" placeholder="Enter Stock Increase Amount Here" aria-label="default input example"></input>
+                    <input class="form-control" id="percentChangeRequired" type="number" min="1" step="any" placeholder="Enter Stock Percent Increase Here" aria-label="default input example"></input>
                 </div>
             </div>
         );
+    }
+
+    if(status === "success") {
+        return (
+            <div>
+                <img
+                    src={CheckMark}
+                    className="mx-auto d-block p-4"
+                    alt="Successful login"
+                />
+            </div>
+        )
     }
 
     return (
@@ -55,15 +87,15 @@ export default function AddDonationEvent() {
             </select>
             <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label">Title</label>
-                <input className="form-control" type="text" placeholder="Enter Title Here" aria-label="default input example"></input>
+                <input onChange={handleInputChange} id="title" className="form-control" type="text" placeholder="Enter Title Here" aria-label="default input example"></input>
             </div>
             <div className="mb-3">
                 <label for="exampleFormControlTextarea1" className="form-label">Description</label>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea onChange={handleInputChange} id="description" className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <div className="mb-3">
                 <label for="exampleFormControlTextarea1" className="form-label">Link to image</label>
-                <input className="form-control" type="text" placeholder="Enter link here" id="formFile"></input>
+                <input onChange={handleInputChange} id="image" className="form-control" type="text" placeholder="Enter link here" id="formFile"></input>
             </div>
             {selectedForm}
             <div className="col-auto">

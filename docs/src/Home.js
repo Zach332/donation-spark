@@ -6,38 +6,7 @@ import Modal from './Modal';
 
 export default function Home() {
 
-    const [availableDonations, setAvailableDonations] = React.useState([
-        {
-            title: "Elon Musk Tweets",
-            description: "Wheveer ckclmnkdec cw c cc d sd cd cds asd cac dd csad c cad csa cd dc sdc asdc sc cd sca dacs dac dsad c ds ad dsc cd asc",
-            stars: 13909,
-            image: "https://img.etimg.com/thumb/width-640,height-480,imgsize-601228,resizemode-1,msid-80417419/industry/telecom/telecom-news/elon-musk-targets-telecom-for-next-disruption-with-starlink-internet/elon-musk-is-the-worlds-second-richest-person-with-an-estimated-net-worth-of-158-billion-.jpg"
-        },
-        {
-            title: "Elon Musk Tweets2",
-            description: "Wheveer ckclmnkdec cw c cc d sd cd cds asd cac dd csad c cad csa cd dc sdc asdc sc cd sca dacs dac dsad c ds ad dsc cd asc",
-            stars: 13909,
-            image: "https://img.etimg.com/thumb/width-640,height-480,imgsize-601228,resizemode-1,msid-80417419/industry/telecom/telecom-news/elon-musk-targets-telecom-for-next-disruption-with-starlink-internet/elon-musk-is-the-worlds-second-richest-person-with-an-estimated-net-worth-of-158-billion-.jpg"
-        },
-        {
-            title: "Elon Musk Tweets3",
-            description: "Wheveer ckclmnkdec cw c cc d sd cd cds asd cac dd csad c cad csa cd dc sdc asdc sc cd sca dacs dac dsad c ds ad dsc cd asc",
-            stars: 13909,
-            image: "https://img.etimg.com/thumb/width-640,height-480,imgsize-601228,resizemode-1,msid-80417419/industry/telecom/telecom-news/elon-musk-targets-telecom-for-next-disruption-with-starlink-internet/elon-musk-is-the-worlds-second-richest-person-with-an-estimated-net-worth-of-158-billion-.jpg"
-        },
-        {
-            title: "Elon Musk Tweets4",
-            description: "Wheveer ckclmnkdec cw c cc d sd cd cds asd cac dd csad c cad csa cd dc sdc asdc sc cd sca dacs dac dsad c ds ad dsc cd asc",
-            stars: 13909,
-            image: "https://img.etimg.com/thumb/width-640,height-480,imgsize-601228,resizemode-1,msid-80417419/industry/telecom/telecom-news/elon-musk-targets-telecom-for-next-disruption-with-starlink-internet/elon-musk-is-the-worlds-second-richest-person-with-an-estimated-net-worth-of-158-billion-.jpg"
-        },
-        {
-            title: "Elon Musk Tweets5",
-            description: "Wheveer ckclmnkdec cw c cc d sd cd cds asd cac dd csad c cad csa cd dc sdc asdc sc cd sca dacs dac dsad c ds ad dsc cd asc",
-            stars: 13909,
-            image: "https://img.etimg.com/thumb/width-640,height-480,imgsize-601228,resizemode-1,msid-80417419/industry/telecom/telecom-news/elon-musk-targets-telecom-for-next-disruption-with-starlink-internet/elon-musk-is-the-worlds-second-richest-person-with-an-estimated-net-worth-of-158-billion-.jpg"
-        },
-    ])
+    const [availableDonations, setAvailableDonations] = React.useState([])
 
     React.useEffect(() => {
         axios
@@ -48,7 +17,7 @@ export default function Home() {
     }, []);
 
     const setStarred = (id) => {
-        setAvailableDonations(availableDonations.map((donation) => donation.title != id?donation:flipDonation(donation)))
+        setAvailableDonations(availableDonations.map((donation) => donation.id != id?donation:flipDonation(donation)))
     }
 
     const flipDonation = (donation) => {
@@ -93,7 +62,7 @@ export default function Home() {
                                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
                             />
                         </svg>
-                            Add donation event
+                            Add donation spark
                     </a>
                 </div>
             </div>
@@ -106,7 +75,7 @@ export default function Home() {
             </div>
             <Modal
                 id={"newTrigger"}
-                title={"Add donation event"}
+                title={"Add donation spark"}
                 body={<AddDonationEvent />}
             />
         </div>
