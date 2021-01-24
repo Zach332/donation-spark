@@ -14,10 +14,11 @@ function App() {
                 <div className="container mx-auto">
                     <Switch>
                         <Route path="/home" exact component={Home} />
+                        <Route path="/about" exact component={About} />
                         <Route path="/event/:id" exact component={DonationTriggerPage} />
                         <Route path="/new-donation-event" exact component={AddDonationEvent} />
-                        <Route path="/follow-donation-event" exact component={CreateDonationRecurr} />
-                        <Route component={About} />
+                        <Route path="/follow-donation-event/:id" exact component={CreateDonationRecurr} />
+                        <Route component={Home} />
                     </Switch>
                 </div>
             </div>

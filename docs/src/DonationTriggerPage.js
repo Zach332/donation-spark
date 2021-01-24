@@ -48,7 +48,7 @@ export default function DonationTrigger() {
                 {additionalFields}
                 <div className="d-flex align-items-center mb-2">
                     <button class="btn btn-outline-info me-auto">
-                        <Link to="/follow-donation-event" className="text-decoration-none">Follow</Link>
+                        <Link to={"/follow-donation-event/"+ donationTrigger.id} className="text-decoration-none">Follow</Link>
                     </button>
                 </div>
                 {donationEvent}

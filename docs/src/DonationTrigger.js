@@ -13,7 +13,7 @@ export default function DonationTrigger( {donationTrigger, setStarred} ) {
     }
 
     const follow = (event) => {
-        window.location.href = ""
+        window.location.href = "/#/follow-donation-event/" + donationTrigger.id
         event.preventDefault();
     }
 
@@ -29,8 +29,8 @@ export default function DonationTrigger( {donationTrigger, setStarred} ) {
                     <h5 class="card-title">{donationTrigger.title}</h5>
                     <p class="card-text">{donationTrigger.description}</p>
                     <div style={{position: 'absolute', bottom: 10, width: 240}} className="d-flex align-items-center align-self-baseline">
-                        <button class="btn btn-outline-info me-auto">
-                            <Link to="/follow-donation-event" className="text-decoration-none">Follow</Link>
+                        <button onClick={follow} class="btn btn-primary me-auto">
+                            Follow
                         </button>
                         <div>
                             {donationTrigger.stars.toLocaleString()}
