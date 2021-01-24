@@ -8,6 +8,7 @@ public class Trigger {
     public String type;
     public String description;
     public String image;
+    public int stars;
 
     public Trigger(String title, String description, String image) {
         this.id = UUID.randomUUID().toString();
@@ -15,5 +16,6 @@ public class Trigger {
         this.type = "Trigger";
         this.description = description;
         this.image = image;
+        this.stars = 0;
     }
 }
