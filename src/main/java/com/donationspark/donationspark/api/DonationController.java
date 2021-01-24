@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.donationspark.donationspark.InMemoryDatabase;
 import com.donationspark.donationspark.pojo.StockPriceChangeTrigger;
+import com.donationspark.donationspark.pojo.KeywordTrigger;
 import com.donationspark.donationspark.pojo.Trigger;
 import com.donationspark.donationspark.pojo.ViewStockPriceChangeTrigger;
 
@@ -46,7 +47,11 @@ public class DonationController {
         Trigger trigger = database.getTrigger(triggerId);
         if (trigger instanceof StockPriceChangeTrigger) {
             StockPriceChangeTrigger stockPriceChangeTrigger = (StockPriceChangeTrigger) trigger;
-            return new ViewStockPriceChangeTrigger(stockPriceChangeTrigger, getRecentStockPricesChange(stockPriceChangeTrigger.ticker));
+            return new ViewStockPriceChangeTrigger(stockPriceChangeTrigger,
+                    getRecentStockPricesChange(stockPriceChangeTrigger.ticker));
+        }
+        if (trigger instanceof KeywordTrigger) {
+            return (KeywordTrigger) trigger;
         }
         return trigger;
     }
@@ -58,6 +63,11 @@ public class DonationController {
 
     @PostMapping("/api/triggers/stocks")
     public void createStockTrigger(@RequestBody StockPriceChangeTrigger trigger) {
+        database.addTrigger(trigger);
+    }
+
+    @PostMapping("/api/triggers/tweets")
+    public void createTweetTrigger(@RequestBody KeywordTrigger trigger) {
         database.addTrigger(trigger);
     }
 
