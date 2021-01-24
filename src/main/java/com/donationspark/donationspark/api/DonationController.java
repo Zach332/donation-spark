@@ -16,9 +16,13 @@ public class DonationController {
     }
     
     @GetMapping("/api/test")
-    public String test() {
+    public IEXReturn test() {
         String url = "https://cloud.iexapis.com/stable/stock/aapl/quote?token=" + IEX_API_TOKEN;
 
-        return restTemplate.getForObject(url, String.class);
+        return restTemplate.getForObject(url, IEXReturn.class);
+    }
+
+    private static class IEXReturn {
+        public double changePercent;
     }
 }
