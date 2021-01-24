@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/donation-spark/static/css/main.0792c4f0.chunk.css",
-    "main.js": "/donation-spark/static/js/main.6c4b700b.chunk.js",
-    "main.js.map": "/donation-spark/static/js/main.6c4b700b.chunk.js.map",
-    "runtime-main.js": "/donation-spark/static/js/runtime-main.cf2617cc.js",
-    "runtime-main.js.map": "/donation-spark/static/js/runtime-main.cf2617cc.js.map",
-    "static/js/2.afe53be3.chunk.js": "/donation-spark/static/js/2.afe53be3.chunk.js",
-    "static/js/2.afe53be3.chunk.js.map": "/donation-spark/static/js/2.afe53be3.chunk.js.map",
-    "static/js/3.b2227d1e.chunk.js": "/donation-spark/static/js/3.b2227d1e.chunk.js",
-    "static/js/3.b2227d1e.chunk.js.map": "/donation-spark/static/js/3.b2227d1e.chunk.js.map",
-    "index.html": "/donation-spark/index.html",
-    "static/css/main.0792c4f0.chunk.css.map": "/donation-spark/static/css/main.0792c4f0.chunk.css.map",
-    "static/js/2.afe53be3.chunk.js.LICENSE.txt": "/donation-spark/static/js/2.afe53be3.chunk.js.LICENSE.txt",
-    "static/media/starempty.ee580998.svg": "/donation-spark/static/media/starempty.ee580998.svg",
-    "static/media/starfull.eed07309.svg": "/donation-spark/static/media/starfull.eed07309.svg"
+    "main.css": "/static/css/main.0792c4f0.chunk.css",
+    "main.js": "/static/js/main.6c4b700b.chunk.js",
+    "main.js.map": "/static/js/main.6c4b700b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e854ff5c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e854ff5c.js.map",
+    "static/js/2.afe53be3.chunk.js": "/static/js/2.afe53be3.chunk.js",
+    "static/js/2.afe53be3.chunk.js.map": "/static/js/2.afe53be3.chunk.js.map",
+    "static/js/3.b2227d1e.chunk.js": "/static/js/3.b2227d1e.chunk.js",
+    "static/js/3.b2227d1e.chunk.js.map": "/static/js/3.b2227d1e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.0792c4f0.chunk.css.map": "/static/css/main.0792c4f0.chunk.css.map",
+    "static/js/2.afe53be3.chunk.js.LICENSE.txt": "/static/js/2.afe53be3.chunk.js.LICENSE.txt",
+    "static/media/starempty.ee580998.svg": "/static/media/starempty.ee580998.svg",
+    "static/media/starfull.eed07309.svg": "/static/media/starfull.eed07309.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.cf2617cc.js",
+    "static/js/runtime-main.e854ff5c.js",
     "static/js/2.afe53be3.chunk.js",
     "static/css/main.0792c4f0.chunk.css",
     "static/js/main.6c4b700b.chunk.js"
