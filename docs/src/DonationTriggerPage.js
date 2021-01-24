@@ -1,13 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import EmptyStar from './starempty.svg'
 import FullStar from './starfull.svg'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-export default function DonationTrigger( {donationTrigger, setStarred} ) {
+export default function DonationTrigger() {
+    const [donationTrigger, setDonationTrigger] = React.useState({})
+    let params = useParams();
 
-    const clickStar = () => {
-        setStarred(donationTrigger.title);
-    }
+    useEffect(() => {
+        axios.get("/api/triggers/" + params.id).then((response) => {
+            setDonationTrigger(response.data);
+        });
+    }, []);
 
     return (
         <div style={{width: 300, height: 450, backgroundColor:"#ECDDD9"}} class="card m-2">
@@ -19,15 +23,6 @@ export default function DonationTrigger( {donationTrigger, setStarred} ) {
                     <button class="btn btn-outline-info me-auto">
                         <Link to="/follow-donation-event" className="text-decoration-none">Follow</Link>
                     </button>
-                    <div>
-                        {donationTrigger.stars.toLocaleString()}
-                    </div>
-                    <img
-                        src={donationTrigger.starred?FullStar:EmptyStar}
-                        className="ms-1"
-                        onClick={clickStar}
-                        style={{ width: 20}}
-                    />
                 </div>
             </div>
         </div>

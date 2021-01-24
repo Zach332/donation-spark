@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 export default function AddDonationEvent() {
 
@@ -7,6 +8,15 @@ export default function AddDonationEvent() {
     const options = (event) => {setEventType(event.target.value)};
 
     let selectedForm;
+
+    const handleSubmit = (event) => {
+        axios
+            .post("/api/triggers", {
+            })
+            .then(() => {
+            })
+        event.preventDefault();
+    }
 
     if (eventType == "tweet") {
         selectedForm = (
@@ -25,11 +35,11 @@ export default function AddDonationEvent() {
         selectedForm = (
             <div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Name of Stock</label>
-                    <input class="form-control" type="text" placeholder="Enter Name of Stock Here" aria-label="default input example"></input>
+                    <label for="exampleFormControlInput1" class="form-label">Stock Ticker</label>
+                    <input class="form-control" type="text" placeholder="Enter Stock Ticker Here" aria-label="default input example"></input>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Stock Increase Amount</label>
+                    <label for="exampleFormControlInput1" class="form-label">Stock Increase Percent</label>
                     <input class="form-control" type="number" min="1" step="any" placeholder="Enter Stock Increase Amount Here" aria-label="default input example"></input>
                 </div>
             </div>
@@ -37,7 +47,7 @@ export default function AddDonationEvent() {
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <label className="form-label">Type of event</label>
             <select className="form-select mb-5" aria-label="Default select example" onChange={options} value={eventType}>
                 <option value="tweet">Tweet</option>
