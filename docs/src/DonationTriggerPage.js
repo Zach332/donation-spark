@@ -21,17 +21,37 @@ export default function DonationTrigger() {
         return <Spinner />
     }
 
+    var additionalFields;
+    if(donationTrigger.type === "StockPriceChangeTrigger") {
+        additionalFields = (
+            <p className="p-1" style={{backgroundColor:"#ECDDD9"}}>Percent stock change on the most recent trading day: {donationTrigger.mostRecentPriceChange}</p>
+        )
+    }
+
+    var donationEvent;
+    if(donationTrigger.type === "StockPriceChangeTrigger") {
+        donationEvent = (
+            <p>You will donate whenever <b>{donationTrigger.ticker}</b> increases by <b>{donationTrigger.percentChangeRequired}</b>%</p>
+        )
+    } else if(donationTrigger.type === "KeywordTrigger") {
+        donationEvent = (
+            <p>You will donate whenever <b>{donationTrigger.username}</b> sends a Tweet containing the keyword <b>{donationTrigger.keywordRequired}</b></p>
+        )
+    }
+
     return (
-        <div style={{width: "80%", height: "100%", backgroundColor:"#ECDDD9"}} class="card m-2">
-            <img src={donationTrigger.image} class="card-img-top p-1" alt="..."></img>
+        <div style={{width: "80%", height: "100%"}} class="card m-2 mx-auto">
+            <img src={donationTrigger.image} style={{width:"50%", height:"50%"}} class="card-img-top p-1 mx-auto" alt="..."></img>
             <div class="card-body">
                 <h5 class="card-title">{donationTrigger.title}</h5>
                 <p class="card-text">{donationTrigger.description}</p>
-                <div className="d-flex align-items-center">
+                {additionalFields}
+                <div className="d-flex align-items-center mb-2">
                     <button class="btn btn-outline-info me-auto">
                         <Link to="/follow-donation-event" className="text-decoration-none">Follow</Link>
                     </button>
                 </div>
+                {donationEvent}
             </div>
         </div>
     )

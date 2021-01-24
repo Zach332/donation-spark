@@ -12,6 +12,11 @@ export default function DonationTrigger( {donationTrigger, setStarred} ) {
         event.preventDefault()
     }
 
+    const follow = (event) => {
+        window.location.href = ""
+        event.preventDefault();
+    }
+
     return (
         <a
             href={triggerLink}
