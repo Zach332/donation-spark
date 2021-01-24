@@ -8,3 +8,4 @@ target
 .vscode
 node_modules
 lucene
+src/main/appengine/app.yaml
