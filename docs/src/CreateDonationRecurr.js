@@ -3,9 +3,21 @@ import { Link } from 'react-router-dom';
 
 export default function CreateDonationRecurr( {donationTrigger} ) {
 
+    let donationContent;
+
+    if (donationTrigger.type == "tweet") {
+        donationContent = (
+            <h2>Donate Everytime {donationTrigger.user} mentions {donationTrigger.keyword}</h2>
+        );
+    } else if (donationTrigger.type == "stock") {
+        donationContent = (
+            <h2>Donate Everytime {donationTrigger.ticker} increases {donationTrigger.percentChangeRequired} percernt</h2>
+        );
+    }
+    
     return (
         <div> {/*TODO: CHANGE VARIABLE SUBSTUFF*/}
-            <h2>Donate Everytime {donationTrigger.user} mentions {donationTrigger.keyword}</h2>
+            {donationContent}
             <div class="mb-3">
                 <label className="form-label">Donation Amount</label>
                 <input className="form-control" type="number" min="1" step="any" placeholder="Enter Amount Here" aria-label="default input example"></input>
