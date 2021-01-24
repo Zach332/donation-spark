@@ -67,7 +67,7 @@ export default function CreateDonationRecurr() {
                 </select>
             </div>
             <div class="col-auto">
-                <button type="submit" onClick={handleSubmit} disabled={status==="submitted"} className="btn btn-primary mb-3">Follow Donation Event</button>
+                <button type="submit" onClick={handleSubmit} disabled={status==="submitted"} className="btn btn-primary mb-3">Follow Donation Spark</button>
             </div>
             <div className="mx-auto d-block">
                 {thankYou}
