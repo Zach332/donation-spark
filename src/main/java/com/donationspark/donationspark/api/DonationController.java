@@ -28,7 +28,7 @@ public class DonationController {
         this.restTemplate = new RestTemplate();
         this.IEX_API_TOKEN = System.getenv("IEX_API_TOKEN");
     }
-    
+
     @GetMapping("/api/test")
     public IEXReturn test() {
         String url = "https://cloud.iexapis.com/stable/stock/aapl/quote?token=" + IEX_API_TOKEN;
@@ -68,5 +68,12 @@ public class DonationController {
 
     private static class IEXReturn {
         public double changePercent;
+    }
+
+    private double getRecentStockPricesChange(String ticker) {
+        String url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote?token=" + IEX_API_TOKEN;
+
+        IEXReturn IEXData = restTemplate.getForObject(url, IEXReturn.class);
+        return IEXData.changePercent;
     }
 }
