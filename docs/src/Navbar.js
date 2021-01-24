@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css"
+import Logo from "./dslogo.png"
 
 export default function Navbar() {
 
@@ -19,13 +20,13 @@ export default function Navbar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
+                <ul className="navbar-nav" style={{height: 70}}>
                         <NavLink
                             className="nav-item nav-link"
                             activeClassName="nav-item nav-link active"
                             to="/home"
                         >
-                            Home
+                            <img src={Logo} height="70"></img>
                         </NavLink>
                     </ul>
                     <ul className="navbar-nav">
