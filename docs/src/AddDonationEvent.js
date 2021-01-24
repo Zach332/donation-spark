@@ -44,11 +44,11 @@ export default function AddDonationEvent() {
             <div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Twitter Username</label>
-                    <input class="form-control" id="username" type="text" placeholder="Enter Twitter Username Here" aria-label="default input example"></input>
+                    <input class="form-control" onChange={handleInputChange} id="username" type="text" placeholder="Enter Twitter Username Here" aria-label="default input example"></input>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Keyword</label>
-                    <input class="form-control" id="keywordRequired" type="text" placeholder="Enter Keyword Here" aria-label="default input example"></input>
+                    <input class="form-control" onChange={handleInputChange} id="keywordRequired" type="text" placeholder="Enter Keyword Here" aria-label="default input example"></input>
                 </div>
             </div>
         );
@@ -57,11 +57,11 @@ export default function AddDonationEvent() {
             <div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Stock Ticker</label>
-                    <input class="form-control" id="ticker" type="text" placeholder="Enter Stock Ticker Here" aria-label="default input example"></input>
+                    <input class="form-control" onChange={handleInputChange} id="ticker" type="text" placeholder="Enter Stock Ticker Here" aria-label="default input example"></input>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Stock Increase Percent</label>
-                    <input class="form-control" id="percentChangeRequired" type="number" min="1" step="any" placeholder="Enter Stock Percent Increase Here" aria-label="default input example"></input>
+                    <input class="form-control" onChange={handleInputChange} id="percentChangeRequired" type="number" min="1" step="any" placeholder="Enter Stock Percent Increase Here" aria-label="default input example"></input>
                 </div>
             </div>
         );

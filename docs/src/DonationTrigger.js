@@ -1,7 +1,6 @@
 import React from 'react'
 import EmptyStar from './starempty.svg'
 import FullStar from './starfull.svg'
-import { Link } from 'react-router-dom';
 
 export default function DonationTrigger( {donationTrigger, setStarred} ) {
 

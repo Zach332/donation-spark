@@ -1,17 +1,23 @@
 import React, {useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios'
+import ThankYou from './thanksfordonating.png'
 
 export default function CreateDonationRecurr() {
     const [donationTrigger, setDonationTrigger] = React.useState({})
+    const [status, setStatus] = React.useState("notSubmitted")
     let params = useParams();
 
     useEffect(() => {
         axios.get("https://donation-spark.ue.r.appspot.com/api/triggers/" + params.id).then((response) => {
             setDonationTrigger(response.data);
-            console.log(response.data)
         })
     }, []);
+
+    const handleSubmit = (event) => {
+        setStatus("submitted")
+        event.preventDefault();
+    }
 
     let donationContent;
 
@@ -25,6 +31,17 @@ export default function CreateDonationRecurr() {
         );
     } else {
         donationContent = <h2>Donate for spark: {donationTrigger.title}</h2>
+    }
+
+    let thankYou;
+
+    if(status === "submitted") {
+        thankYou = (
+            <img
+                src={ThankYou}
+                className="ms-1"
+            />
+        )
     }
     
     return (
@@ -49,7 +66,7 @@ export default function CreateDonationRecurr() {
                 </select>
             </div>
             <div class="col-auto">
-                <button type="submit" className="btn btn-primary mb-3">Follow Donation Event</button>
+                <button type="submit" onClick={handleSubmit} className="btn btn-primary mb-3">Follow Donation Event</button>
             </div>
         </div>
     )
