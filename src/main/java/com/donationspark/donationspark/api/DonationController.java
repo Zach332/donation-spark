@@ -46,7 +46,7 @@ public class DonationController {
         Trigger trigger = database.getTrigger(triggerId);
         if (trigger instanceof StockPriceChangeTrigger) {
             StockPriceChangeTrigger stockPriceChangeTrigger = (StockPriceChangeTrigger) trigger;
-            return new ViewStockPriceChangeTrigger(stockPriceChangeTrigger, 0.0);
+            return new ViewStockPriceChangeTrigger(stockPriceChangeTrigger, getRecentStockPricesChange(stockPriceChangeTrigger.ticker));
         }
         return trigger;
     }
@@ -69,6 +69,6 @@ public class DonationController {
         String url = "https://cloud.iexapis.com/stable/stock/" + ticker + "/quote?token=" + IEX_API_TOKEN;
 
         IEXReturn IEXData = restTemplate.getForObject(url, IEXReturn.class);
-        return IEXData.changePercent;
+        return IEXData.changePercent * 100;
     }
 }
