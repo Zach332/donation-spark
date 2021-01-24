@@ -86,6 +86,8 @@ export default function AddDonationEvent() {
                 <option value="tweet">Tweet</option>
                 <option value="stock">Stock Change</option>
             </select>
+            {eventType === "tweet"?<p className="p-1" style={{backgroundColor:"#ECDDD9"}}>Spark a donation whenever a Twitter user creates a Tweet with a specific keyword</p>
+                :<p className="p-1" style={{backgroundColor:"#ECDDD9"}}>Spark a donation whenever a stock increases by a specific % in a day</p>}
             <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label">Title</label>
                 <input onChange={handleInputChange} id="title" className="form-control" type="text" placeholder="Enter Title Here" aria-label="default input example"></input>
