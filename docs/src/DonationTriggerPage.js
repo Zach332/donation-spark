@@ -1,16 +1,25 @@
 import React, {useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios'
+import Spinner from "./Spinner";
+
 
 export default function DonationTrigger() {
     const [donationTrigger, setDonationTrigger] = React.useState({})
+    const [status, setStatus] = React.useState("loading")
     let params = useParams();
 
     useEffect(() => {
         axios.get("https://donation-spark.ue.r.appspot.com/api/triggers/" + params.id).then((response) => {
             setDonationTrigger(response.data);
+        }).then(() => {
+            setStatus("loaded") 
         });
     }, []);
+
+    if(status === "loading") {
+        return <Spinner />
+    }
 
     return (
         <div style={{width: "80%", height: "100%", backgroundColor:"#ECDDD9"}} class="card m-2">
