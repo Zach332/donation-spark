@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./Navbar.css"
 
 export default function Navbar() {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-sm navbar-dark bg-dark justify-content-between mb-3 px-2">
+            <nav id="navbar" className="navbar navbar-light navbar-expand-sm justify-content-between mb-3 px-2">
                 <button
                     className="navbar-toggler me-auto"
                     type="button"
@@ -21,8 +22,8 @@ export default function Navbar() {
                 <ul className="navbar-nav">
                         <NavLink
                             className="nav-item nav-link"
-                            activeClassName="nav-item nav-link"
-                            to="/"
+                            activeClassName="nav-item nav-link active"
+                            to="/home"
                         >
                             Home
                         </NavLink>
@@ -30,13 +31,13 @@ export default function Navbar() {
                     <ul className="navbar-nav">
                         <NavLink
                             className="nav-item nav-link"
-                            activeClassName="nav-item nav-link"
+                            activeClassName="nav-item nav-link active"
                             to="/about"
                         >
                             About
                         </NavLink>
                     </ul>
-\                </div>
+                </div>
             </nav>
         </div>
     );
