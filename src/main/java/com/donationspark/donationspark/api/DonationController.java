@@ -38,22 +38,17 @@ public class DonationController {
 
     @GetMapping("/api/triggers")
     public List<Trigger> getAllTriggers() {
-        List<Trigger> triggers = database.getTriggers();
-
-        for (int i = 0; i < triggers.size(); i += 1) {
-            Trigger trigger = triggers.get(i);
-            if (trigger instanceof StockPriceChangeTrigger) {
-                StockPriceChangeTrigger stockPriceChangeTrigger = (StockPriceChangeTrigger) trigger;
-                triggers.set(i, new ViewStockPriceChangeTrigger(stockPriceChangeTrigger, 0.0));
-            }
-        }
-
-        return triggers;
+        return database.getTriggers();
     }
 
     @GetMapping("/api/triggers/{triggerId}")
     public Trigger getTrigger(@PathVariable String triggerId) {
-        return database.getTrigger(triggerId);
+        Trigger trigger = database.getTrigger(triggerId);
+        if (trigger instanceof StockPriceChangeTrigger) {
+            StockPriceChangeTrigger stockPriceChangeTrigger = (StockPriceChangeTrigger) trigger;
+            return new ViewStockPriceChangeTrigger(stockPriceChangeTrigger, 0.0);
+        }
+        return trigger;
     }
 
     @PostMapping("/api/triggers")
