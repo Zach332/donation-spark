@@ -21,16 +21,16 @@ export default function Navbar() {
                 <ul className="navbar-nav">
                         <NavLink
                             className="nav-item nav-link"
-                            activeClassName="nav-item nav-link active"
+                            activeClassName="nav-item nav-link"
                             to="/"
                         >
-                            About
+                            Home
                         </NavLink>
                     </ul>
                     <ul className="navbar-nav">
                         <NavLink
                             className="nav-item nav-link"
-                            activeClassName="nav-item nav-link active"
+                            activeClassName="nav-item nav-link"
                             to="/about"
                         >
                             About
