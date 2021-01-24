@@ -15,13 +15,13 @@ export default function AddDonationEvent() {
     const handleSubmit = (event) => {
         if(eventType === "tweet") {
             axios
-                .post("https://donation-spark.ue.r.appspot.com/api/tweets", trigger)
+                .post("https://donation-spark.ue.r.appspot.com/api/triggers/tweets", trigger)
                 .then(() => {
                     setStatus("success")
                 })
         } else {
             axios
-                .post("https://donation-spark.ue.r.appspot.com/api/stocks", trigger)
+                .post("https://donation-spark.ue.r.appspot.com/api/triggers/stocks", trigger)
                 .then(() => {
                     setStatus("success")
                 })
@@ -36,6 +36,7 @@ export default function AddDonationEvent() {
             ...trigger,
             [name]: target.value,
         }));
+        console.log(trigger)
     };
 
     if (eventType == "tweet") {
@@ -91,15 +92,15 @@ export default function AddDonationEvent() {
             </div>
             <div className="mb-3">
                 <label for="exampleFormControlTextarea1" className="form-label">Description</label>
-                <textarea onChange={handleInputChange} id="description" className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea onChange={handleInputChange} id="description" className="form-control" rows="3"></textarea>
             </div>
             <div className="mb-3">
                 <label for="exampleFormControlTextarea1" className="form-label">Link to image</label>
-                <input onChange={handleInputChange} id="image" className="form-control" type="text" placeholder="Enter link here" id="formFile"></input>
+                <input onChange={handleInputChange} id="image" className="form-control" type="text" placeholder="Enter link here"></input>
             </div>
             {selectedForm}
             <div className="col-auto">
-                <button type="submit" className="btn btn-primary mb-3">Add Event</button>
+                <button type="submit" className="btn btn-primary mb-3">Add Spark</button>
             </div>
         </form>
     )

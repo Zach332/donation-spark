@@ -7,8 +7,9 @@ export default function DonationTrigger( {donationTrigger, setStarred} ) {
 
     var triggerLink = "/#/event/" + donationTrigger.id;
 
-    const clickStar = () => {
+    const clickStar = (event) => {
         setStarred(donationTrigger.id);
+        event.preventDefault()
     }
 
     return (
