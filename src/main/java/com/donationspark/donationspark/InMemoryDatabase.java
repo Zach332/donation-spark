@@ -25,7 +25,7 @@ public class InMemoryDatabase {
         starbucksTrigger.stars = 6548;
         triggers.add(starbucksTrigger);
 
-        Trigger elonMuskTrigger = new KeywordTrigger("Elon Musk", "Whenever Elon Musk tweets about Mars", "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg", "@elonmusk", "Mars");
+        Trigger elonMuskTrigger = new KeywordTrigger("Elon Musk", "Whenever Elon Musk tweets about Mars.", "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg", "@elonmusk", "Mars");
         elonMuskTrigger.stars = 4278;
         triggers.add(elonMuskTrigger);
     }
