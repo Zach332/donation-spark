@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
 export default function AddDonationEvent() {
 
-    const [eventType, setEventType] = React.useState("nothing");
+    const [eventType, setEventType] = React.useState("tweet");
 
     const options = (event) => {setEventType(event.target.value)};
 
@@ -39,26 +38,27 @@ export default function AddDonationEvent() {
 
     return (
         <form>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Title</label>
-                <input class="form-control" type="text" placeholder="Enter Title Here" aria-label="default input example"></input>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Image</label>
-                <input class="form-control" type="file" id="formFile"></input>
-            </div>
-            <select class="form-select" aria-label="Default select example" onChange={options} value={eventType}>
-                <option selected>Type of Event</option>
+            <h1>Add new donation event</h1>
+            <label className="form-label">Type of event</label>
+            <select className="form-select mb-5" aria-label="Default select example" onChange={options} value={eventType}>
                 <option value="tweet">Tweet</option>
                 <option value="stock">Stock Change</option>
             </select>
+            <div className="mb-3">
+                <label for="exampleFormControlInput1" className="form-label">Title</label>
+                <input className="form-control" type="text" placeholder="Enter Title Here" aria-label="default input example"></input>
+            </div>
+            <div className="mb-3">
+                <label for="exampleFormControlTextarea1" className="form-label">Description</label>
+                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div className="mb-3">
+                <label for="exampleFormControlTextarea1" className="form-label">Link to image</label>
+                <input className="form-control" type="text" placeholder="Enter link here" id="formFile"></input>
+            </div>
             {selectedForm}
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3">Add Event</button>
+            <div className="col-auto">
+                <button type="submit" className="btn btn-primary mb-3">Add Event</button>
             </div>
         </form>
     )
