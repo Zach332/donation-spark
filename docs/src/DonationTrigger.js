@@ -22,7 +22,7 @@ export default function DonationTrigger( {donationTrigger, setStarred} ) {
                 <div class="card-body">
                     <h5 class="card-title">{donationTrigger.title}</h5>
                     <p class="card-text">{donationTrigger.description}</p>
-                    <div className="d-flex align-items-center align-self-baseline">
+                    <div style={{position: 'absolute', bottom: 10, width: 240}} className="d-flex align-items-center align-self-baseline">
                         <button class="btn btn-outline-info me-auto">
                             <Link to="/follow-donation-event" className="text-decoration-none">Follow</Link>
                         </button>
