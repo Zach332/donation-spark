@@ -1,1 +1,1 @@
-web: java -jar target/donation-spark-0.0.0-SNAPSHOT.jar
+web: java -jar target/donation-spark-0.0.1-SNAPSHOT.jar
