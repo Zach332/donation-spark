@@ -1,0 +1,1 @@
+java -jar target/donation-spark-0.0.0.jar
