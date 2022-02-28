@@ -8,7 +8,7 @@ We built Donation Spark to provide an easy way to donate to valuable, important 
 
 ## What it does
 
-The [Donation Spark homepage](http://donation-spark.tech/#/home) provides a list of different triggers, called sparks, for different possible events. Sparks are broad in scope, ranging from Elon musk tweeting about Mars to having a good day in the stock market. 
+The Donation Spark homepage provides a list of different triggers, called sparks, for different possible events. Sparks are broad in scope, ranging from Elon musk tweeting about Mars to having a good day in the stock market. 
 
 Users can also create the own sparks. For example, users can add a spark that activates when a stock goes up by a specified percentage in one day.
 
@@ -36,6 +36,6 @@ We learned a whole lot over the last ~24 hours. Highlights include working with 
 
 ## Built with
 
-Donation Spark's frontend is built using React and hosted on Github Pages with a custom domain ([donation-spark.tech](http://donation-spark.tech/#/home)) provided by domains.com. 
+Donation Spark's frontend is built using React and hosted on Github Pages with a custom domain donation-spark.tech (no longer active) provided by domains.com. 
 
 Our Spring Boot backend is written in Java and hosted on Google Cloud Platform App Engine. It connects to the IEX Cloud Platform API to get stock price information.
